@@ -170,7 +170,7 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3rem 0;
+    padding: 3rem;
 } 
 
 .sec-video .container {
@@ -538,7 +538,9 @@ input{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding: 3rem;
     justify-content: center;
+
 } 
 .sec-stories .container{
     width: 60%;
@@ -546,8 +548,7 @@ input{
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    padding: 3rem;
-} 
+}
 .sec-stories{
     display: flex;
     flex-direction: column;
@@ -670,14 +671,13 @@ footer {
     width: 100%;
     background-color: rgb(51, 51, 51);
     color: #fff;
-    padding: 3rem 0 2rem;
+    padding: 3rem;
     border-top: 3px solid rgba(73, 148, 236);
 } 
 
 footer .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
@@ -807,7 +807,6 @@ footer p {
         width: 150px;
     }
     .our-team-images{
-        padding: 2rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
@@ -912,7 +911,7 @@ footer p {
         font-size: 15px;
     }
     .sec-video {
-        padding: 2rem 0;
+        padding: 3rem;
     } 
 
     .sec-video .container {
@@ -1213,7 +1212,7 @@ footer p {
     } 
     .sec-portfolio {
         min-height: auto;
-        padding: 2rem 1rem;
+        padding: 3rem;
     } 
 
     .up {
@@ -1268,22 +1267,15 @@ footer p {
         height: 2.5rem;
     } 
     footer {
-        padding: 2rem 0 1.5rem;
-    } 
-
-    footer .container {
-        padding: 0 1rem;
-    } 
+        padding: 3rem;
+    }
 
     .gallery {
         grid-template-columns: repeat(2, 1fr);
-    } 
-    .sec-portfolio {
-        padding: 1.5rem 0.5rem;
-    } 
+    }
 
     .sec-portfolio .container {
-        width: 95%;
+        width: 90%;
         gap: 1.5rem;
     } 
 
