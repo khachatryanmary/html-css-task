@@ -64,7 +64,59 @@ input{
     display: flex;
     justify-content: center;
     align-items: center;
-} 
+}
+.image-section{
+    position: relative;
+}
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+.hero-content h1{
+    font-size: 3.5rem;
+    color: #fff;
+}
+.hero-content p{
+    color: #fff;
+    text-align: center;
+}
+.hero-content button{
+    width: 8rem;
+    height: 2.5rem;
+}
+.hero-content .lines-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.lines-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+}
+.lines-div div{
+    background: #fff;
+    border: 1px solid #fff;
+    width: 3rem;
+}
+
+
+
 #home{
     color: rgba(73, 148, 236);
     border-top: 2px solid rgba(73, 148, 236);
@@ -254,7 +306,7 @@ input{
     gap: 1rem;
 } 
 .sec-portfolio{
-    min-height: 50rem;
+    min-height: 40rem;
     background: rgba(211, 211, 211, 0.23);
     padding: 3rem;
     display: flex;
@@ -357,6 +409,7 @@ input{
     justify-content: center;
     align-items: center;
     min-height: 30rem;
+    padding: 3rem;
 }
 .our-team .container{
     width: 60%;
@@ -557,7 +610,7 @@ input{
     min-height: 25rem;
     flex-direction: column;
     gap: 1rem;
-    padding: 2rem;
+    padding: 3rem;
 } 
 .contact .container{
     width: 60%;
@@ -576,18 +629,34 @@ input{
     background: rgba(73, 148, 236);
     color: white;
     font-size: 10px;
-    width: 2rem;
-    height: 2rem;
 } 
 .contact .right{
     display: flex;
     flex-direction: column;
     gap: 2rem;
 } 
-.contact .left p{
+.contact .left > div{
+    width: 100%;
     display: flex;
     gap: 1rem;
-} 
+    justify-content: start;
+    align-items: center;
+}
+.contact .left > div > div{
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid rgba(73, 148, 236);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(73, 148, 236);
+}
+
+.contact .left > div > div > svg{
+    width: 16px;
+    height: 16px;
+}
+
 .contact-div{
     display: flex;
     justify-content: space-between;
@@ -621,10 +690,7 @@ footer .our-gallery {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}  
-.footer-title {
-    margin-bottom: 0.5rem;
-} 
+}
 
 .footer-title h4 {
     font-size: 1rem;
@@ -655,12 +721,7 @@ footer p {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    transition: color 0.3s;
-} 
-
-.socials svg:hover {
-    color: #e74c3c;
-} 
+}
 
 .links {
     display: flex;
@@ -712,6 +773,36 @@ footer p {
     color: rgba(73, 148, 236);
 }
 @media(max-width: 992px){
+    .hero-content h1{
+        font-size: 2rem;
+        color: #fff;
+    }
+    .hero-content button{
+        width: 6rem;
+        height: 2rem;
+    }
+    .hero-content .lines-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .3rem;
+    }
+
+    .lines-div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .5rem;
+        position: absolute;
+        left: 50%;
+        bottom: 10%;
+        transform: translateX(-50%);
+    }
+    .lines-div div{
+        background: #fff;
+        border: 1px solid #fff;
+        width: 2rem;
+    }
     .sec-info div{
         width: 150px;
     }
@@ -734,6 +825,10 @@ footer p {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
+    .sec-portfolio .down{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
     .sec-stories .explore-button{
         width: 100%;
         color: white;
@@ -744,9 +839,29 @@ footer p {
         color: white;
         font-size: 10px;
     }
+    .our-services{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sec-customers{
+        min-height: 50vh;
+    }
+    .customers{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
+    .hero-content h1{
+        font-size: 1rem;
+        color: #fff;
+    }
+    .lines-div div{
+        background: #fff;
+        border: 1px solid #fff;
+        width: 1rem;
+    }
     .header{
         height: 3rem;
     } 
