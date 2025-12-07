@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-li  {
+ul,li  {
     list-style: none;
 } 
 
@@ -15,26 +15,32 @@ a  {
 
 input {
     border: none;
-    padding: 10px;
+    padding: .5rem;
     border-bottom: 1px solid rgba(183, 184, 188, 0.45);
     background: transparent;
-    width: 20rem;
 }
 
 .container {
     width: 60%;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+section,
+footer {
+    padding: 3rem;
+}
+
+.sec-video,
+.sec-portfolio,
+.our-team,
+.sec-customers{
+    background: rgba(211, 211, 211, 0.23);
 }
 
 .service-title, .footer-title {
     display: flex;
     position: relative;
 }
-
-.footer-title::before {}
 
 .service-title::before {
     content: "";
@@ -62,14 +68,7 @@ input {
     width: 30px;
 }
 
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-}
-
-header .container {
+header .flexbox{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,40 +96,40 @@ header .container .right svg:hover {
     color: rgba(73, 148, 236);
 }
 
+header .container ul{
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+}
+
 header .container li {
-    padding: 0.5rem;
+    padding: 1rem;
     cursor: pointer;
-    border-top: 2px solid transparent;
+    position: relative;
     transition: color .3s ease, border-color .3s ease;
 }
 
-header .container ul,li {
-    height: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+header .container li.active {
+    color: rgba(73, 148, 236);
+    border-top: 1px solid rgba(73, 148, 236);
 }
 
-header .container .right li:hover{
+header .container .right li:hover:not(.active) {
     color: rgba(73, 148, 236);
-    border-top: 2px solid rgba(73, 148, 236);
+    border-top: 1px solid rgba(73, 148, 236);
 }
+
 .hero-section{
-    position: relative;
     background: url("../images/main-image.jpg");
     min-height: 93vh;
     background-size: cover;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-.hero-section .container {
-    width: 60%;
+.hero-section .flexbox {
     gap: 2rem;
-    position: absolute;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -147,88 +146,39 @@ header .container .right li:hover{
 }
 
 .hero-section .container button {
-    width: 8rem;
-    height: 2.5rem;
+    padding: 1rem 2rem;
 }
 
-.lines-div {
+.sec-info .flexbox {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    position: absolute;
-    left: 50%;
-    bottom: 10%;
-    transform: translateX(-50%);
-}
-
-.lines-div div  {
-    background: #fff;
-    border: 1px solid #fff;
-    width: 3rem;
-}
-
-#active {
-    color: rgba(73, 148, 236);
-    border-top: 2px solid rgba(73, 148, 236);
-}
-
-.nav {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-} 
-
-.sec-info .container {
-    width: 60%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-direction: row;
 }
-.sec-info {
-    padding: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
 .sec-info div {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 1rem;
-} 
+}
+
 .sec-info h3, svg {
     color: rgba(73, 148, 236);
-} 
+}
+
 .sec-info p {
     text-align: center;
     color: gray;
-} 
-.sec-video  {
-    background: rgba(211, 211, 211, 0.23);
-    padding: 3rem;
 }
 
-.sec-video .container {
+.sec-video .flexbox {
     gap: 1rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
 }
 
 .sec-video .left  {
-    display: flex;
-    flex-direction: column;
     width: 60%;
-    background: #fff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.text-div  {
     display: flex;
     flex-direction: column;
 }
@@ -237,35 +187,31 @@ header .container .right li:hover{
     display: flex;
     gap: 2rem;
     justify-content: center;
-    align-items: center;
     border-bottom: 1px solid #b7b8bc;
-    list-style: none;
-    flex-wrap: wrap;
-} 
+}
 
 .sec-video .left ul li  {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     gap: 0.5rem;
     padding: 0.5rem;
     cursor: pointer;
-} 
+}
 
-#business  {
+.business  {
     background: #4a90e2;
     color: white;
 }
 
-#business svg {
+.business svg {
     color: white;
 }
 
 .sec-video .left ul li p  {
     font-size: 0.9rem;
     font-weight: 500;
-} 
+}
 
 .texts  {
     display: flex;
@@ -283,43 +229,33 @@ header .container .right li:hover{
 .sec-video .right {
     width: 40%;
     overflow: hidden;
+    display: flex;
 }
 
 .sec-video .right img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
-.services {
-    background: #fff;
-    padding: 3rem;
-}
-.services .container {
-    width: 60%;
+.services .flexbox {
     display: flex;
+    gap: 2rem;
     flex-direction: column;
-    align-items: center;
-    gap: 3rem;
 }
 
-.service-title {
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    flex-direction: column;
-} 
-.service-title .line {
-    width: 40px;
-    border: 1px solid rgba(73, 148, 236);
-    color: rgba(73, 148, 236);
-} 
+.services .our-services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
 
 .our-services {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-} 
+}
+
 .our-services > div {
     display: flex;
     justify-content: center;
@@ -343,16 +279,7 @@ header .container .right li:hover{
     gap: 1rem;
 }
 
-.sec-portfolio {
-    background: rgba(211, 211, 211, 0.23);
-    padding: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.sec-portfolio .container {
-    width: 60%;
+.sec-portfolio .flexbox {
     gap: 2rem;
     display: flex;
     flex-direction: column;
@@ -369,25 +296,24 @@ header .container .right li:hover{
 
 .up ul {
     display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    align-items: center;
 }
 
 .up ul li {
-    padding: 0 1rem;
-    background: rgba(128, 128, 128, 0.38);
+    padding: 0.5rem 1rem;
+    margin: 0 0 0 0.5rem;
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: color .3s ease, border-color .3s ease;
 }
 
-#all {
+.up ul li:not(.all) {
+    background: rgba(128, 128, 128, 0.38);
+}
+
+.all {
     background: rgba(73, 148, 236);
     color: #fff;
 }
+
 .up ul li:hover {
     background: rgba(73, 148, 236);
     color: #fff;
@@ -407,41 +333,25 @@ header .container .right li:hover{
 }
 
 .explore-button {
-    width: 30%;
+    padding: 1rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 2.5rem;
+    justify-content: center;
     background: rgba(73, 148, 236);
     color: #fff;
     gap: 1rem;
+    border: none;
 }
 
-#explore-button svg {
-    color: #fff;
-}
-
-.sec-statistics {
-    background: #fff;
+.sec-statistics .flexbox {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem;
-}
-
-.sec-statistics .container {
-    width: 60%;
-    display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 3rem;
 }
 
 .sec-statistics .container div {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    justify-content: center;
     align-items: center;
 } 
 
@@ -459,21 +369,11 @@ header .container .right li:hover{
     color: gray;
 }
 
-.our-team {
-    background: rgba(211, 211, 211, 0.23);
+.our-team .flexbox {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem;
-}
-
-.our-team .container {
-    width: 60%;
-    display: flex;
-    align-items: center;
     flex-direction: column;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .our-team-images {
@@ -495,7 +395,6 @@ header .container .right li:hover{
     gap: 1rem;
     justify-content: center;
     align-items: start;
-    background: #fff;
     box-shadow: 1px 1px 2px gray;
 }
 
@@ -506,6 +405,7 @@ header .container .right li:hover{
     gap: 1rem;
     padding-bottom: 6rem;
     padding-left: .5rem;
+    align-items: start;
 }
 
 .team-info p {
@@ -526,30 +426,26 @@ header .container .right li:hover{
     color: gray;
 }
 
-.sec-feedback .container {
+.sec-feedback .flexbox {
     display: flex;
     flex-direction: column;
     gap: 4rem;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
 }
 
 .sec-feedback .container .user-info{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    justify-content: center;
     align-items: center;
 }
+
 .sec-feedback {
     background: rgba(73, 148, 236);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 3rem;
-}
+ }
 
 .sec-feedback img {
     width: 5rem;
@@ -575,32 +471,24 @@ header .container .right li:hover{
     display: flex;
     gap: 1rem;
     justify-content: center;
-    align-items: center;
 }
 
 .dots-div div {
     width: .5rem;
     height: .5rem;
+}
+
+.dots-div div:not(.active-dot) {
     background: rgba(218, 214, 214, 0.62);
 }
 
-#active-dot {
+.active-dot {
     background: white;
 }
 
-.sec-customers {
-    background: rgba(211, 211, 211, 0.23);
+.sec-customers .flexbox {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 3rem;
-}
-
-.sec-customers .container {
-    display: flex;
-    width: 60%;
     justify-content: space-between;
-    align-items: center;
 }
 
 .sec-customers img {
@@ -609,35 +497,18 @@ header .container .right li:hover{
     height: 7rem;
 }
 
-.customers {
+.sec-stories .service-title{
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+    justify-content: start;
 }
 
-.sec-stories {
+.sec-stories .flexbox {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 2rem;
-    padding: 3rem;
-    justify-content: center;
-}
-
-.sec-stories .container {
-    width: 60%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.sec-stories {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
 }
 
 .sec-stories .stories {
@@ -653,9 +524,6 @@ header .container .right li:hover{
 .stories > div {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
-    width: 100%;
     box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.55);
     gap: 1rem;
 }
@@ -667,7 +535,6 @@ header .container .right li:hover{
 .details .left {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: .5rem;
     color: rgba(73, 148, 236);
 }
@@ -683,7 +550,6 @@ header .container .right li:hover{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0.5rem;
     border-top: 1px solid rgba(128, 128, 128, 0.32);
 }
@@ -696,26 +562,9 @@ header .container .right li:hover{
     color: #fff;
 }
 
-.contact {
-    background: rgba(211, 211, 211, 0.23);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 3rem;
-}
 
-.contact .container {
-    width: 60%;
+.contact .flexbox {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.contact .left {
-    display: flex;
-    align-items: start;
-    justify-content: center;
     flex-direction: column;
     gap: 2rem;
 }
@@ -726,23 +575,30 @@ header .container .right li:hover{
     font-size: 10px;
 }
 
-.contact .right {
+.contact .left{
+    width: 70%;
+}
+
+.contact .right{
+    width: 30%;
+}
+
+.contact .right,
+.contact .left {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
 .contact .left > div {
-        display: flex;
+    display: flex;
     gap: 1rem;
-    justify-content: start;
     align-items: center;
 }
 
 .contact .left > div > div {
     width: 2.5rem;
     height: 2.5rem;
-    border: 1px solid rgba(73, 148, 236);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -756,22 +612,16 @@ header .container .right li:hover{
 
 .contact-div {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
-
-#message-button {
-    width: 50%;
-} 
 
 footer  {
     background-color: rgb(51, 51, 51);
     color: #fff;
-    padding: 3rem;
     border-top: 3px solid rgba(73, 148, 236);
-} 
+}
 
-footer .container  {
+footer .grid-box  {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
@@ -836,8 +686,7 @@ footer p  {
 .links  {
     display: flex;
     gap: 2rem;
-    width: 100%;
-} 
+}
 
 .links .left,
 .links .right  {
@@ -848,7 +697,6 @@ footer p  {
 
 .links a  {
     color: #bdc3c7;
-    text-decoration: none;
     font-size: 0.9rem;
     transition: color 0.3s;
 } 
@@ -874,7 +722,6 @@ footer p  {
     display: flex;
     gap: 1rem;
     justify-content: center;
-    align-items: center;
     color: #fff;
     background: black;
 }
@@ -884,26 +731,28 @@ footer p  {
 }
 
 @media(max-width: 1400px) {
-    .our-team .container {
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-    }
     .our-team .container .service-title {
         width: 100%;
-        text-align: left;
     }
+
     .our-team .container .our-team-images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
         gap: 1rem;
+    }
+
+    .our-team .container .our-team-images > div {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         align-items: center;
     }
 
     .our-team .container .our-team-images img {
+        width: 100%;
+        height: 300px;
         object-fit: cover;
+        object-position: center;
     }
 
     .sec-customers .container {
@@ -911,11 +760,6 @@ footer p  {
         align-items: center;
         gap: 1rem;
         justify-content: space-between;
-    }
-
-    .sec-customers .container img {
-        width: 150px;
-        height: 100px;
     }
 
     .sec-portfolio .container .up ul{
@@ -943,63 +787,26 @@ footer p  {
         color: #fff;
     }
 
-    .hero-section .container button {
-        width: 6rem;
-        height: 2rem;
-    }
-
     .sec-info .container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
 
-    .sec-video .container {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        align-items: center;
+    .sec-video .flexbox {
         flex-direction: column;
     }
 
-    .our-team .container {
-        width: 70%;
-    }
-
-    .our-team .container .our-team-images {
-        gap: 1rem;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-        align-items: center;
-
-    }
-
-    .sec-statistics .container {
+    .sec-video .left,
+    .sec-video .right {
         width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-        align-items: center;
-        justify-content: center;
     }
 
     .sec-portfolio ul {
         display: none;
     }
 
-    .sec-customers .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .sec-customers .container .img{
-        width: 100px;
-        height: 50px;
-    }
-
-    footer .container  {
+    footer .grid-box  {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
     }
@@ -1009,39 +816,22 @@ footer p  {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .sec-stories .explore-button {
-        width: 100%;
+    .explore-button {
         color: white;
-        font-size: 10px;
+        font-size: 15px;
     }
 
-    .sec-portfolio .explore-button {
-        width: 200px;
-        color: white;
-        font-size: 10px;
-    }
-
-    .our-services {
+    .our-services,
+    .customers{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .customers {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .sec-customers .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
     }
 
     .sec-customers .container img {
         width: 120px;
         height: 100px;
     }
+
 }
 
 @media (max-width: 768px)  {
@@ -1050,55 +840,41 @@ footer p  {
         color: #fff;
     }
 
-    .lines-div div {
-        background: #fff;
-        border: 1px solid #fff;
-        width: 1rem;
+    .sec-video .left ul {
+        gap: 1rem;
     }
 
-    .header-content .left {
-        display: flex;
-        justify-content: center;
-        width: 2rem;
-        color: white;
+    .sec-video .left ul li {
+        padding: 0.3rem;
+    }
+
+    .sec-video .left ul li p {
+        font-size: 0.8rem;
+    }
+
+    .texts {
+        padding: 1rem;
+    }
+
+    .texts p {
+        font-size: 0.9rem;
     }
 
     .header-content .right {
         display: none;
     }
 
-    .image-section img {
-        width: 100%;
-        object-fit: cover;
-    }
-
-    .sec-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 3rem;
-    }
-
-    .sec-info .container {
-        padding: 20rem 0;
+    .sec-info .flexbox {
         display: flex;
         flex-direction: column;
         gap: 2rem;
         justify-content: center;
         align-items: center;
-
     }
 
     .sec-info svg {
         width: 32px;
         height: 32px;
-    }
-
-    .sec-info div {
-        width: 10rem;
-        height: 12rem;
-        border-radius: 10px;
     }
 
     .sec-info div h3 {
@@ -1109,126 +885,44 @@ footer p  {
         font-size: 15px;
     }
 
-    .sec-video  {
-        padding: 3rem;
-    } 
-
-    .sec-video .container  {
-        flex-direction: column;
-        width: 90%;
-    } 
-
-    .sec-video .left,
-    .sec-video .right  {
-        width: 100%;
-    } 
-
-    .sec-video .right img  {
-        min-height: 300px;
-    } 
-
-    .sec-video .left ul  {
-        gap: 0.5rem;
-        padding: 0.8rem;
-    } 
-
-    .sec-video .left ul li  {
-        gap: 0.3rem;
-    } 
-
-    .sec-video .left ul li svg  {
-        width: 20px;
-        height: 20px;
-    } 
-
-    .sec-video .left ul li p  {
-        font-size: 0.8rem;
-    } 
-
-    .texts  {
-        padding: 1rem;
-    } 
-
-    .texts p  {
-        font-size: 0.9rem;
-    }
-
-    .services {
-        align-items: center;
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-        padding: 3rem;
-    }
-
-    .services .container {
-        display: flex;
-        flex-direction: column;
-    }
-
     .services .container .our-services {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
     .services .container .our-services > div {
-        border: 1px solid rgba(110, 103, 103, 0.51);
-        padding: 1rem;
-        border-radius: 10px;
+        padding-bottom: 0.5rem;
     }
 
-    .sec-portfolio {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sec-portfolio .container  {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
     .sec-portfolio .container .down {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        width: 100%;
     }
 
-    .sec-statistics .container {
+    .sec-statistics .flexbox {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        gap: 2rem;
     }
 
     .sec-portfolio .container .up ul {
         display: none
     }
 
-    .sec-portfolio .container .explore-button {
-        width: 70%;
-        font-size: 10px;
-    }
-
-
     .sec-statistics .container div {
-        width: 100px;
-        height: 100px;
+        display: flex;
+        justify-content: center;
+        gap: .5rem;
     }
 
     .sec-statistics .container div span {
-       font-size: 10px;
+       font-size: 15px;
     }
 
     .sec-statistics .container div svg {
-        width: 16px;
-        height: 16px;
+        width: 32px;
+        height: 32px;
     }
 
     .our-team {
@@ -1236,14 +930,6 @@ footer p  {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
-
-    .our-team .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
     }
 
     .our-team .container .our-team-images {
@@ -1258,23 +944,6 @@ footer p  {
         flex-direction: column;
     }
 
-
-    .sec-feedback {
-        padding: 3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sec-feedback .container {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
     .sec-feedback .container img {
         width: 40px;
         height: 40px;
@@ -1284,42 +953,9 @@ footer p  {
         font-size: 15px;
     }
 
-    .sec-customers {
-        padding: 3rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sec-customers .container {
-        width: 90%;
+    .sec-customers .flexbox {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-    }
-
-    .sec-customers .container .customers {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .sec-stories {
-        padding: 3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sec-customers .container {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
     .stories {
@@ -1327,42 +963,34 @@ footer p  {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 1rem;
-        width: 200px;
+        gap: 2rem;
     }
 
-    .sec-stories .explore-button {
-        width: 200px;
-        color: white;
-        font-size: 10px;
-    }
-
-    .contact {
-        padding: 3rem;
+    .stories div .details{
+        width: 100%;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
     }
 
-    .contact .container {
-        width: 90%;
+    .stories div .details .left, .right {
+        width: 100%;
+    }
+
+    .stories div .details .right {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: end;
     }
 
     .contact .contact-div {
-        width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        align-items: start;
         gap: 1rem;
     }
 
-    .contact .left, .right {
+    .contact .left,
+    .contact .right{
         width: 100%;
     }
 
@@ -1370,49 +998,8 @@ footer p  {
         width: 100%;
     }
 
-    footer {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    footer .container {
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .footer .container div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .footer p {
-        text-align: center;
-    }
-
-    .sec-end {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
     .sec-end p {
         font-size: 10px;
-    }
-
-    footer .container  {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
     }
 
     footer .about,
@@ -1421,7 +1008,7 @@ footer p  {
     footer .our-gallery  {
         text-align: center;
         align-items: center;
-    } 
+    }
 
     .footer-title .line  {
         margin: 0 auto;
@@ -1433,56 +1020,23 @@ footer p  {
 
     .links  {
         justify-content: center;
-    } 
+    }
+
     .sec-portfolio  {
         min-height: auto;
         padding: 3rem;
-    } 
-
-    .up  {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.5rem;
-    } 
+    }
 
     .service-title  {
         width: 100%;
-    } 
-
-    .service-title h2  {
-        font-size: 1.5rem;
-    } 
-
-    .up ul  {
-        width: 100%;
-        justify-content: flex-start;
-        gap: 0.4rem;
-    } 
-
-    .up ul li  {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.8rem;
-        height: auto;
-    } 
-
-    .down  {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    } 
-
-    .down img  {
-        height: 250px;
-    } 
-
-    .explore-button  {
-        padding: 0.8rem 1.5rem;
-        font-size: 0.9rem;
     }
 
-    .sec-portfolio .explore-button {
-        width: 200px;
-        color: white;
+    .explore-button  {
         font-size: 10px;
+    }
+
+    .our-team .container .team-info{
+        width: 100%;
     }
 }
 
@@ -1491,72 +1045,17 @@ footer p  {
         padding: .5rem;
     }
 
-    .header-content .left svg  {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-
-    footer  {
-        padding: 3rem;
-    }
-
-    .gallery  {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .sec-portfolio .container  {
-        width: 90%;
-        gap: 1.5rem;
-    } 
-
     .service-title h2  {
         font-size: 1.3rem;
-    } 
-
-    .service-title .line  {
-        width: 50px;
-        height: 2px;
-    } 
-
-    .up ul  {
-        gap: 0.3rem;
-    } 
+    }
 
     .up ul li  {
         padding: 0.4rem 0.7rem;
         font-size: 0.75rem;
-    } 
-
-    .down img  {
-        height: 200px;
-        border-radius: 6px;
-    } 
-
-    .explore-button  {
-        padding: 0.7rem 1.2rem;
-        font-size: 0.85rem;
-        width: 100%;
-        justify-content: center;
-    } 
-
-    .explore-button svg  {
-        width: 18px;
-        height: 18px;
     }
 
-    .sec-info {
-        padding: 3rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sec-info .container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .sec-info .container div h3{
+        text-align: center;
     }
 
     .sec-info svg {
@@ -1564,10 +1063,10 @@ footer p  {
         height: 32px;
     }
 
-    .sec-portfolio .explore-button {
-        width: 200px;
-        color: white;
-        font-size: 10px;
+    footer .grid-box  {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
     }
 
 } 
