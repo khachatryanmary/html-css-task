@@ -711,10 +711,6 @@ footer p {
 }
 
 @media (max-width: 1400px) {
-    .our-team .container .service-title {
-        width: 100%;
-    }
-
     .our-team .container .our-team-images {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -990,10 +986,6 @@ footer p {
         padding: 3rem;
     }
 
-    .service-title {
-        width: 100%;
-    }
-
     .button {
         font-size: 10px;
     }
@@ -1030,6 +1022,15 @@ footer p {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 2rem;
+    }
+
+    .sec-video .container .left .first-col svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .sec-video .container .left .first-col p {
+        font-size: 10px;
     }
 
 } 
