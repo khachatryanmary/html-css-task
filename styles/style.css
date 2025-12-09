@@ -1,3 +1,7 @@
+:root {
+    --primary-color: rgb(73, 148, 236);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -21,14 +25,14 @@ input {
 }
 
 button {
-    padding: 1rem 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(73, 148, 236);
+    background: var(--primary-color);
     color: #fff;
     gap: 1rem;
     border: none;
+    padding: 1rem 2rem;
 }
 
 button svg {
@@ -46,66 +50,63 @@ footer {
 }
 
 .bg-gray {
-    background: rgba(211, 211, 211, 0.23);
+    background: rgb(249, 249, 249);
 }
 
-.service-title, .footer-title {
-    display: flex;
+.section-title, .footer-title {
     position: relative;
 }
 
-.service-title::before {
+.section-title::before {
     content: "";
     position: absolute;
-    bottom: -5px;
+    width: 30px;
     height: 3px;
-    background-color: rgba(73, 148, 236);
+    top: 100%;
+    background-color: var(--primary-color);
     left: 0;
-    width: 50px;
 }
 
-.footer-title::before {
-    content: "";
-    position: absolute;
-    bottom: -3px;
-    height: 3px;
-    background-color: rgba(73, 148, 236);
-    width: 30px;
-    left: 0;
+header {
+    height: 4rem;
+    display: flex;
+    align-items: center;
 }
 
 header .flexbox {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: .2rem;
+    height: 100%;
 }
 
-header .container .left svg {
+header .container .logo svg {
     width: 3rem;
     height: 3rem;
 }
 
-header .container .right {
+header .container .block {
     display: flex;
     align-items: center;
     gap: 1rem;
+    height: 100%;
 }
 
-header .container .right svg {
+header .container .block svg {
     cursor: pointer;
     color: black;
     transition: color .3s ease, border-color .3s ease;
 }
 
-header .container .right svg:hover {
-    color: rgba(73, 148, 236);
+header .container .block svg:hover {
+    color: var(--primary-color);
 }
 
 header .container ul {
     display: flex;
     align-items: center;
     gap: .2rem;
+    height: 100%;
 }
 
 header .container li {
@@ -113,21 +114,24 @@ header .container li {
     cursor: pointer;
     position: relative;
     transition: color .3s ease, border-color .3s ease;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 header .container li.active {
-    color: rgba(73, 148, 236);
-    border-top: 1px solid rgba(73, 148, 236);
+    color: var(--primary-color);
+    border-top: 2px solid var(--primary-color);
 }
 
-header .container .right li:hover:not(.active) {
-    color: rgba(73, 148, 236);
-    border-top: 1px solid rgba(73, 148, 236);
+header .container .block li:hover:not(.active) {
+    color: var(--primary-color);
+    border-top: 2px solid var(--primary-color);
 }
 
 .hero-section {
     background: url("../images/main-image.jpg");
-    min-height: 93vh;
+    height: calc(100vh - 4rem);
     background-size: cover;
     display: flex;
     align-items: center;
@@ -143,59 +147,59 @@ header .container .right li:hover:not(.active) {
     display: flex;
     align-items: center;
     flex-direction: column;
+    text-align: center;
 }
 
 .hero-section .container h1 {
-    font-size: 3.5rem;
-    text-align: center;
+    font-size: 56px;
     color: #fff;
 }
 
 .hero-section .container p {
     color: #fff;
-    text-align: center;
 }
 
-.sec-info .flexbox {
+.section-info .flexbox {
     display: flex;
-    flex-direction: row;
 }
 
-.sec-info div {
+.section-info .container div {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 1rem;
-}
-
-.sec-info h3, svg {
-    color: rgba(73, 148, 236);
-}
-
-.sec-info p {
     text-align: center;
+}
+
+.section-info h3,
+.section-info svg{
+    color: var(--primary-color);
+}
+
+.section-info p {
     color: gray;
 }
 
-.sec-video .flexbox {
+.section-video .flexbox {
     gap: 1rem;
     display: flex;
 }
 
-.sec-video .left {
+.section-video .text-block {
     width: 60%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: var(--primary-color);
 }
 
-.sec-video .left ul {
+.section-video .text-block ul {
     display: flex;
     gap: 2rem;
     justify-content: center;
     border-bottom: 1px solid #b7b8bc;
 }
 
-.sec-video .left ul li {
+.section-video .text-block ul li {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -204,17 +208,17 @@ header .container .right li:hover:not(.active) {
     cursor: pointer;
 }
 
-.business {
+.active-item {
     background: #4a90e2;
     color: white;
 }
 
-.business svg {
+.active-item svg {
     color: white;
 }
 
-.sec-video .left ul li p {
-    font-size: 0.9rem;
+.section-video .text-block ul li p {
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -228,20 +232,18 @@ header .container .right li:hover:not(.active) {
 .texts p {
     line-height: 1.6;
     color: gray;
-    font-size: 0.95rem;
+    font-size: 14px;
 }
 
-.sec-video .right {
+.section-video .video-image {
     width: 40%;
-    overflow: hidden;
     display: flex;
 }
 
-.sec-video .right img {
+.section-video .video-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
 }
 
 .services .flexbox {
@@ -253,23 +255,17 @@ header .container .right li:hover:not(.active) {
 .services .our-services {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-}
-
-.our-services {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
 .our-services > div {
     display: flex;
     justify-content: center;
-    align-items: start;
     gap: 2rem;
 }
 
 .our-services h4 {
-    color: rgba(73, 148, 236);
+    color: var(--primary-color);
 }
 
 .our-services p {
@@ -278,13 +274,11 @@ header .container .right li:hover:not(.active) {
 
 .our-services > div div {
     display: flex;
-    justify-content: start;
-    align-items: start;
     flex-direction: column;
     gap: 1rem;
 }
 
-.sec-portfolio .flexbox {
+.section-portfolio .flexbox {
     gap: 2rem;
     display: flex;
     flex-direction: column;
@@ -296,31 +290,30 @@ header .container .right li:hover:not(.active) {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: start;
 }
 
 .up ul {
     display: flex;
+    gap: 1rem;
 }
 
 .up ul li {
     padding: 0.5rem 1rem;
-    margin: 0 0 0 0.5rem;
     border-radius: 10px;
     transition: color .3s ease, border-color .3s ease;
 }
 
-.up ul li:not(.all) {
+.up ul li:not(.active-link) {
     background: rgba(128, 128, 128, 0.38);
 }
 
-.all {
-    background: rgba(73, 148, 236);
+.active-link {
+    background: var(--primary-color);
     color: #fff;
 }
 
 .up ul li:hover {
-    background: rgba(73, 148, 236);
+    background: var(--primary-color);
     color: #fff;
     cursor: pointer;
 }
@@ -337,12 +330,12 @@ header .container .right li:hover:not(.active) {
     height: 15rem;
 }
 
-.sec-statistics .flexbox {
+.section-statistics .flexbox {
     display: flex;
     justify-content: space-between;
 }
 
-.sec-statistics .container div {
+.section-statistics .container div {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -350,13 +343,12 @@ header .container .right li:hover:not(.active) {
 }
 
 .number {
-    color: black;
-    font-size: 25px;
+    font-size: 26px;
     font-weight: bold;
 }
 
-.sec-statistics svg {
-    color: rgba(73, 148, 236);
+.section-statistics svg {
+    color: var(--primary-color);
 }
 
 .statistics-text {
@@ -386,29 +378,24 @@ header .container .right li:hover:not(.active) {
 .our-team-images > div {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
     justify-content: center;
-    align-items: start;
     box-shadow: 1px 1px 2px gray;
 }
 
 .team-info {
-    height: 5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding-bottom: 6rem;
-    padding-left: .5rem;
-    align-items: start;
+    padding: .5rem;
 }
 
 .team-info p {
-    color: rgba(73, 148, 236);
+    color: var(--primary-color);
 }
 
 .team-info span {
     color: gray;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .social-icons {
@@ -420,82 +407,79 @@ header .container .right li:hover:not(.active) {
     color: gray;
 }
 
-.sec-feedback .flexbox {
+.section-feedback .flexbox {
     display: flex;
     flex-direction: column;
     gap: 4rem;
 }
 
-.sec-feedback .container .user-info {
+.section-feedback .container .user-info {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     align-items: center;
+    color: #b7b8bd;
+}
+.section-feedback .container .user-info .position {
+    color: rgb(255, 255, 255, 0.5);
 }
 
-.sec-feedback {
-    background: rgba(73, 148, 236);
+.section-feedback {
+    background: var(--primary-color);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.sec-feedback img {
+.section-feedback img {
     width: 5rem;
     height: 5rem;
     object-fit: cover;
     border-radius: 50%;
 }
 
-.sec-feedback p, span {
+.section-feedback p,
+.section-feedback span {
     color: #fff;
     text-align: center;
 }
 
-#name {
-    font-weight: bold;
-}
-
-#position {
-    color: #b7b8bd;
-}
-
-.dots-div {
+.dots-box {
     display: flex;
     gap: 1rem;
     justify-content: center;
 }
 
-.dots-div div {
+.dots-box div {
     width: .5rem;
     height: .5rem;
 }
 
-.dots-div div:not(.active-dot) {
-    background: rgba(218, 214, 214, 0.62);
+.dots-box div:not(.active-dot) {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .active-dot {
     background: white;
 }
 
-.sec-customers .flexbox {
+.section-customers .flexbox {
     display: flex;
     justify-content: space-between;
 }
 
-.sec-customers img {
+.section-customers img {
     object-fit: cover;
     width: 12rem;
     height: 7rem;
 }
 
-.sec-stories .service-title {
+.section-stories .section-title {
     width: 100%;
 }
 
-.sec-stories .flexbox {
+.section-stories .flexbox {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -503,9 +487,21 @@ header .container .right li:hover:not(.active) {
     gap: 2rem;
 }
 
-.sec-stories .stories {
+.section-stories .stories {
     display: flex;
     gap: 1rem;
+}
+
+.section-stories .container .story-description {
+    padding: 0.5rem;
+}
+
+.section-stories .container .story-description p{
+    margin-top: 0.5rem;
+}
+
+.section-stories .container .story-description h4 {
+    color: var(--primary-color);
 }
 
 .stories img {
@@ -517,28 +513,27 @@ header .container .right li:hover:not(.active) {
     display: flex;
     flex-direction: column;
     box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.55);
-    gap: 1rem;
 }
 
 .stories div span {
-    color: rgba(73, 148, 236);
+    color: var(--primary-color);
 }
 
-.details .left {
+.details .comments {
     display: flex;
     align-items: center;
     gap: .5rem;
-    color: rgba(73, 148, 236);
+    color: var(--primary-color);
 }
 
-.details .right {
+.details .arrow-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(73, 148, 236);
+    color: var(--primary-color);
 }
 
-.sec-stories .details {
+.section-stories .details {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -547,7 +542,7 @@ header .container .right li:hover:not(.active) {
 }
 
 .details h4 {
-    color: rgba(73, 148, 236);
+    color: var(--primary-color);
 }
 
 .contact .flexbox {
@@ -556,48 +551,48 @@ header .container .right li:hover:not(.active) {
     gap: 2rem;
 }
 
-.contact .left svg {
-    background: rgba(73, 148, 236);
+.contact .contact-info svg {
+    background: var(--primary-color);
     color: white;
-    font-size: 10px;
+    font-size: 12px;
 }
 
-.contact .left {
+.contact .contact-info {
     width: 70%;
 }
 
-.contact .right {
+.contact .input-field {
     width: 30%;
 }
 
-.contact .right,
-.contact .left {
+.contact .input-field,
+.contact .contact-info {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-.contact .left > div {
+.contact .contact-info > div {
     display: flex;
     gap: 1rem;
     align-items: center;
 }
 
-.contact .left > div > div {
+.contact .contact-info > div > div {
     width: 2.5rem;
     height: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(73, 148, 236);
+    background: var(--primary-color);
 }
 
-.contact .left > div > div > svg {
+.contact .contact-info > div > div > svg {
     width: 16px;
     height: 16px;
 }
 
-.contact-div {
+.contact-block {
     display: flex;
     align-items: center;
 }
@@ -605,14 +600,13 @@ header .container .right li:hover:not(.active) {
 footer {
     background-color: rgb(51, 51, 51);
     color: #fff;
-    border-top: 3px solid rgba(73, 148, 236);
+    border-top: 3px solid var(--primary-color);
 }
 
 footer .grid-box {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    align-items: start;
 }
 
 footer .about,
@@ -632,7 +626,7 @@ footer .our-gallery {
 }
 
 footer p {
-    font-size: 0.9rem;
+    font-size: 14px;
     line-height: 1.6;
     color: #bdc3c7;
 }
@@ -668,8 +662,8 @@ footer p {
     gap: 2rem;
 }
 
-.links .left,
-.links .right {
+.links .company-links,
+.links .support-links {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -677,7 +671,7 @@ footer p {
 
 .links a {
     color: #bdc3c7;
-    font-size: 0.9rem;
+    font-size: 14px;
     transition: color 0.3s;
 }
 
@@ -697,7 +691,7 @@ footer p {
     object-fit: cover;
 }
 
-.sec-end {
+.section-end {
     padding: 1rem;
     display: flex;
     gap: 1rem;
@@ -707,7 +701,7 @@ footer p {
 }
 
 #blue {
-    color: rgba(73, 148, 236);
+    color: var(--primary-color);
 }
 
 @media (max-width: 1400px) {
@@ -731,14 +725,14 @@ footer p {
         object-position: center;
     }
 
-    .sec-customers .container {
+    .section-customers .container {
         display: flex;
         align-items: center;
         gap: 1rem;
         justify-content: space-between;
     }
 
-    .sec-portfolio .container .up ul {
+    .section-portfolio .container .up ul {
         display: none;
     }
 }
@@ -748,11 +742,11 @@ footer p {
         padding: .5rem;
     }
 
-    .header .container .right {
+    .header .container .block {
         display: none;
     }
 
-    .header .container .left {
+    .header .container .logo {
         display: flex;
         width: 100%;
         align-items: center;
@@ -760,27 +754,32 @@ footer p {
     }
 
     .hero-section .container h1 {
-        font-size: 2rem;
+        font-size: 32px;
         color: #fff;
     }
 
-    .sec-info .container {
+    .section-info .container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
     }
 
-    .sec-video .flexbox {
+    .section-video .flexbox {
         flex-direction: column;
     }
 
-    .sec-video .left,
-    .sec-video .right {
+    .section-video .text-block,
+    .section-video .video-image {
         width: 100%;
     }
 
-    .sec-portfolio ul {
+    .section-portfolio ul {
         display: none;
+    }
+
+    .services .container .our-services {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     footer .grid-box {
@@ -788,14 +787,14 @@ footer p {
         gap: 2rem;
     }
 
-    .sec-portfolio .down {
+    .section-portfolio .down {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 
     button {
         color: white;
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .our-services {
@@ -803,7 +802,7 @@ footer p {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .sec-customers .container img {
+    .section-customers .container img {
         width: 120px;
         height: 100px;
     }
@@ -811,16 +810,16 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    .sec-video .left ul {
+    .section-video .text-block ul {
         gap: 1rem;
     }
 
-    .sec-video .left ul li {
+    .section-video .text-block ul li {
         padding: 0.3rem;
     }
 
-    .sec-video .left ul li p {
-        font-size: 0.8rem;
+    .section-video .text-block ul li p {
+        font-size: 12px;
     }
 
     .texts {
@@ -828,10 +827,10 @@ footer p {
     }
 
     .texts p {
-        font-size: 0.9rem;
+        font-size: 14px;
     }
 
-    .sec-info .flexbox {
+    .section-info .flexbox {
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -839,17 +838,17 @@ footer p {
         align-items: center;
     }
 
-    .sec-info svg {
+    .section-info svg {
         width: 32px;
         height: 32px;
     }
 
-    .sec-info div h3 {
+    .section-info div h3 {
         font-size: 20px;
     }
 
-    .sec-info div p {
-        font-size: 15px;
+    .section-info div p {
+        font-size: 14px;
     }
 
     .services .container .our-services {
@@ -861,33 +860,33 @@ footer p {
         padding-bottom: 0.5rem;
     }
 
-    .sec-portfolio .container .down {
+    .section-portfolio .container .down {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
 
-    .sec-statistics .flexbox {
+    .section-statistics .flexbox {
         display: flex;
         flex-direction: column;
         gap: 2rem;
     }
 
-    .sec-portfolio .container .up ul {
+    .section-portfolio .container .up ul {
         display: none
     }
 
-    .sec-statistics .container div {
+    .section-statistics .container div {
         display: flex;
         justify-content: center;
         gap: .5rem;
     }
 
-    .sec-statistics .container div span {
-        font-size: 15px;
+    .section-statistics .container div span {
+        font-size: 14px;
     }
 
-    .sec-statistics .container div svg {
+    .section-statistics .container div svg {
         width: 32px;
         height: 32px;
     }
@@ -911,16 +910,16 @@ footer p {
         flex-direction: column;
     }
 
-    .sec-feedback .container img {
+    .section-feedback .container img {
         width: 40px;
         height: 40px;
     }
 
-    .sec-feedback .container span, p {
-        font-size: 15px;
+    .section-feedback .container span, p {
+        font-size: 14px;
     }
 
-    .sec-customers .flexbox {
+    .section-customers .flexbox {
         display: flex;
         flex-direction: column;
     }
@@ -933,6 +932,14 @@ footer p {
         gap: 2rem;
     }
 
+    .section-stories .container .story-description h4 {
+        font-size: 16px;
+    }
+
+    .section-stories .container .story-description p {
+        font-size: 14px;
+    }
+
     .stories div .details {
         width: 100%;
         display: flex;
@@ -940,29 +947,28 @@ footer p {
         align-items: center;
     }
 
-    .stories div .details .left, .right {
+    .stories div .details .comments, .arrow-icon {
         width: 100%;
     }
 
-    .stories div .details .right {
+    .stories div .details .arrow-icon {
         display: flex;
         justify-content: end;
     }
 
-    .contact .contact-div {
+    .contact .contact-block {
         display: flex;
         flex-direction: column;
-        align-items: start;
         gap: 1rem;
     }
 
-    .contact .left,
-    .contact .right {
+    .contact .contact-info,
+    .contact .input-field {
         width: 100%;
     }
 
-    .sec-end p {
-        font-size: 10px;
+    .section-end p {
+        font-size: 12px;
     }
 
     footer .about,
@@ -981,13 +987,13 @@ footer p {
         justify-content: center;
     }
 
-    .sec-portfolio {
+    .section-portfolio {
         min-height: auto;
         padding: 3rem;
     }
 
     .button {
-        font-size: 10px;
+        font-size: 12px;
     }
 
     .our-team .container .team-info {
@@ -1000,20 +1006,16 @@ footer p {
         padding: .5rem;
     }
 
-    .service-title h2 {
-        font-size: 1.3rem;
+    .section-title h2 {
+        font-size: 20px;
     }
 
     .up ul li {
         padding: 0.4rem 0.7rem;
-        font-size: 0.75rem;
+        font-size: 12px;
     }
 
-    .sec-info .container div h3 {
-        text-align: center;
-    }
-
-    .sec-info svg {
+    .section-info svg {
         width: 32px;
         height: 32px;
     }
@@ -1024,13 +1026,19 @@ footer p {
         gap: 2rem;
     }
 
-    .sec-video .container .left .first-col svg {
+    .section-video .container .text-block .first-col svg {
         width: 16px;
         height: 16px;
     }
 
-    .sec-video .container .left .first-col p {
-        font-size: 10px;
+    .section-video .container .text-block .first-col p {
+        font-size: 12px;
+    }
+
+    button {
+        padding: 1rem 2rem;
+        gap: .5rem;
+        font-size: 12px;
     }
 
 } 
