@@ -8,6 +8,8 @@
     box-sizing: border-box;
 }
 
+/*mx-auto w-[60vw] max-w-[960px] min-w-[300px] px-4*/
+
 ul, li {
     list-style: none;
 }
@@ -40,7 +42,8 @@ button svg {
 }
 
 .container {
-    width: 60%;
+    width: 60vw;
+    /*width: 60%;*/
     margin: 0 auto;
 }
 
@@ -53,7 +56,7 @@ footer {
     background: rgb(249, 249, 249);
 }
 
-.section-title, .footer-title {
+.section-title {
     position: relative;
 }
 
@@ -64,7 +67,6 @@ footer {
     height: 3px;
     top: 100%;
     background-color: var(--primary-color);
-    left: 0;
 }
 
 header {
@@ -81,6 +83,7 @@ header .flexbox {
 }
 
 header .container .logo svg {
+    color: var(--primary-color);
     width: 3rem;
     height: 3rem;
 }
@@ -94,7 +97,6 @@ header .container .block {
 
 header .container .block svg {
     cursor: pointer;
-    color: black;
     transition: color .3s ease, border-color .3s ease;
 }
 
@@ -161,6 +163,7 @@ header .container .block li:hover:not(.active) {
 
 .section-info .flexbox {
     display: flex;
+    justify-content: center;
 }
 
 .section-info .container div {
@@ -173,7 +176,7 @@ header .container .block li:hover:not(.active) {
 }
 
 .section-info h3,
-.section-info svg{
+.section-info svg {
     color: var(--primary-color);
 }
 
@@ -260,11 +263,11 @@ header .container .block li:hover:not(.active) {
 
 .our-services > div {
     display: flex;
-    justify-content: center;
     gap: 2rem;
 }
 
-.our-services h4 {
+.our-services h4,
+.our-services svg {
     color: var(--primary-color);
 }
 
@@ -420,6 +423,7 @@ header .container .block li:hover:not(.active) {
     align-items: center;
     color: #b7b8bd;
 }
+
 .section-feedback .container .user-info .position {
     color: rgb(255, 255, 255, 0.5);
 }
@@ -496,7 +500,7 @@ header .container .block li:hover:not(.active) {
     padding: 0.5rem;
 }
 
-.section-stories .container .story-description p{
+.section-stories .container .story-description p {
     margin-top: 0.5rem;
 }
 
@@ -616,13 +620,6 @@ footer .our-gallery {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-}
-
-.footer-title .line {
-    display: block;
-    width: 50px;
-    height: 2px;
-    background-color: rgb(73, 148, 236);
 }
 
 footer p {
@@ -976,7 +973,6 @@ footer p {
     footer .quick-link,
     footer .our-gallery {
         text-align: center;
-        align-items: center;
     }
 
     .socials {
